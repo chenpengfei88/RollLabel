@@ -64,9 +64,10 @@ public class ScrollViewTab extends HorizontalScrollView{
         //tab
         for(int i = 0; i<array.length; i++){
             TextView tabTextView = new TextView(context);
+            tabTextView.setTextSize(18);
             tabTextView.setBackgroundColor(Color.GREEN);
             tabTextView.setLayoutParams(new ViewGroup.LayoutParams(tabWidth, ViewGroup.LayoutParams.WRAP_CONTENT));
-            tabTextView.setPadding(0, 38, 0, 38);
+            tabTextView.setPadding(0, 40, 0, 40);
             tabTextView.setGravity(Gravity.CENTER_HORIZONTAL);
             tabTextView.setText(array[i]);
             if(tabTextView.getParent()!=null)
@@ -130,9 +131,6 @@ public class ScrollViewTab extends HorizontalScrollView{
 
         @Override
         public void onClick(View v) {
-            left = position * tabWidth;
-            invalidate();
-            scroll();
             viewPager.setCurrentItem(position);
         }
     }
